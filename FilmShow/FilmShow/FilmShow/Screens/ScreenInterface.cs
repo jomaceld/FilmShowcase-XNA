@@ -11,7 +11,7 @@ namespace FilmShow.Screens
 		void Initialize();
 		void UnloadContent();
 		void Draw(GameTime gameTime);
-		void Update(GameTime gameTime);
+		void Update(GameTime gameTime,InputHelper input);
 
 
 	}

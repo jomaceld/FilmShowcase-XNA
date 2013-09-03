@@ -34,11 +34,18 @@ namespace FilmShow
             dummyTexture.SetData(new Color[] { whiteColor });
         }
 
-        public void changeRect(Rectangle r)
-        {
-            dummyRectangle = r;
-        }
+		public void changeRect(Rectangle r)
+		{
+			dummyRectangle = r;
+		}
 
+
+		/*public void changeRect(Rectangle r)
+		{
+			dummyRectangle = r;
+		}*/
+
+		
         public void setColor(Color c)
         {
             Colori = c;

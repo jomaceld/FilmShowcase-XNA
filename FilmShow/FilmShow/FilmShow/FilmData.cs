@@ -5,10 +5,11 @@ using System.Text;
 
 namespace FilmShow
 {
-    class FilmData
+    public class FilmData
     {
-        public string name;
-        public string lenght;
-        public string description;
+		public string name = "NaN";
+		public string lenght = "NaN";
+        public string description ="NaN";
+		public string score = "NaN";
     }
 }

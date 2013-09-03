@@ -11,7 +11,8 @@ namespace FilmShow
     {
 
         GraphicsDeviceManager graphicsDeviceMan;
-        public int _WIDTH = 1280, _HEIGHT = 720;
+        public int _WIDTH = 1360, _HEIGHT = 768;
+		InputHelper inputHelper;
 
         public enum Screens 
         { 
@@ -28,6 +29,8 @@ namespace FilmShow
 			graphicsDeviceMan = new GraphicsDeviceManager(this);
             graphicsDeviceMan.PreferredBackBufferHeight = _HEIGHT;
 			graphicsDeviceMan.PreferredBackBufferWidth = _WIDTH;
+			graphicsDeviceMan.IsFullScreen = true;
+			inputHelper = new InputHelper();
 			Content.RootDirectory = "Content";
         }
 
@@ -53,15 +56,16 @@ namespace FilmShow
 
 		protected override void Initialize()
 		{
-			changeToScreen(Screens.FilmList);
+			changeToScreen(Screens.MainMenu);
 			base.Initialize();
 		}
 
 		protected override void Update(GameTime gameTime)
 		{
+			inputHelper.Update();
 			if (actualScreen != null)
 			{
-				actualScreen.Update(gameTime);
+				actualScreen.Update(gameTime,inputHelper);
 			}
 
 			base.Update(gameTime);
